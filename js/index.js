@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-04 21:41:27
+* @Last Modified time: 2018-09-05 09:03:19
 */
 window.onload=function () {
 
@@ -41,10 +41,10 @@ window.onload=function () {
         imgs[num].style.opacity=1;
         dots[num].classList.add("active");
     }
-    banner.onmouseover=function () {
+    banner.onmouseenter=function () {
         clearInterval(t);
     }
-    banner.onmouseout=function () {
+    banner.onmouseleave=function () {
         t=setInterval(move,2000);
     }
     leftbtn.onclick=function(){
