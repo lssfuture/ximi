@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-07-31 20:56:30
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-05 09:08:31
+* @Last Modified time: 2018-09-05 09:26:20
 */
 *{
 	list-style: none;
@@ -501,6 +501,7 @@ input.text:focus{
 	height: 100%;
 	overflow: hidden;
 	float: right;
+
 }
 .neirong .list{
 	width: 235px;
@@ -512,7 +513,7 @@ input.text:focus{
 .neirong .lists{
 	width: 1984px;
 	height: 100%;
-
+	transition: all .5s;
 }
 .neirong .lists .list:nth-child(1){
 	border-top: 1px solid #ffac13;
@@ -845,7 +846,7 @@ margin-right: 0px;
 	width: 2480px;
 	height: 302px;
 	overflow: hidden;
-
+	transition: all .5s;
 }
 .hui .box-tj .list ul li{
 	width: 235px;
