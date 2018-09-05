@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 20:33:58
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-04 17:11:25
+* @Last Modified time: 2018-09-05 11:01:53
 */
  // 图书轮播
     // let imgss=document.querySelectorAll(".hui .content .list ul li .pics .pic");
@@ -19,6 +19,7 @@
     imgss[0].style.left="0";
     let nows=0;
     let nexts=0;
+    let flag=true;
      function moves() {
         nexts++;
         if (nexts==imgss.length){
@@ -45,17 +46,18 @@
         console.log(next);
     }
     leftbtns.onclick=function () {
-        movesL();
-        if (next==0) {
+           if (nows==0) {
             return;
         }
+        movesL();
+     
      }
     rightbtns.onclick=function () {
-        moves();
-        if (next==3) {
+          if (nows==dotss.length-1) {
             return;
         }
-        
+        moves();
+      
     }
     for (let i=0;i<dotss.length;i++){
     	dotss[i].onmouseenter=function(){

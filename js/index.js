@@ -2,24 +2,24 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-05 09:03:19
+* @Last Modified time: 2018-09-05 19:10:37
 */
 window.onload=function () {
 
 // 轮播图
      let imgs=document.querySelectorAll(".banner .lunbotu img");               /*获取元素*/
-    let dots=document.querySelectorAll(".banner li");
+    let dots=document.querySelectorAll(".banner .lunbotu .lunbodian ul li");
     let banner=document.querySelectorAll(".banner .lunbotu")[0];
     let leftbtn=document.querySelectorAll(".leftbnt")[0];
     let rightbtn=document.querySelectorAll(".rightbnt")[0];
+    console.log(imgs);
     imgs[0].style.opacity=1;
     dots[0].classList.add("active");
-    let t;
     let num=0;
-    setInterval(move,2000);
+    let t=setInterval(move,2000);
     function move() {
         num++;
-        if (num==5){
+        if (num==dots.length){
             num=0;
         }
         for (let j=0;j<dots.length;j++){
@@ -28,11 +28,11 @@ window.onload=function () {
         }
         imgs[num].style.opacity=1;
         dots[num].classList.add("active");
-    }
-    function moveL() {
+     }
+      function moveL() {
         num--;
-        if (num<=0){
-            num=4;
+        if (num==-1){
+            num=dots.length-1;
         }
         for (let j=0;j<dots.length;j++){
             imgs[j].style.opacity=0;
@@ -40,23 +40,23 @@ window.onload=function () {
         }
         imgs[num].style.opacity=1;
         dots[num].classList.add("active");
+     }
+  
+
+    leftbtn.onclick=function () {
+        moveL(); 
     }
-    banner.onmouseenter=function () {
-        clearInterval(t);
+    rightbtn.onclick=function () {
+        move();
     }
-    banner.onmouseleave=function () {
-        t=setInterval(move,2000);
+    banner.onmouseover=function () {
+         clearInterval(t);
+     }
+    banner.onmouseout=function () {
+         t=setInterval(move,2000);
     }
-    leftbtn.onclick=function(){
-    	
-    	moveL();
-    }
-    rightbtn.onclick=function(){
-    	
-    	move();
-    }
-    for (let i=0;i<dots.length;i++){
-        dots[i].onmouseover=function(){
+     for (let i=0;i<dots.length;i++){
+        dots[i].onclick=function(){
             for (let j = 0; j < dots.length; j++) {
                 imgs[j].style.opacity = 0;
                 dots[j].classList.remove("active");
@@ -64,7 +64,14 @@ window.onload=function () {
             imgs[i].style.opacity=1;
             dots[i].classList.add("active");
         }
-    
+    }
+// 窗口失去焦点时，停止时间间隔函数
+    window.onblur=function () {
+        clearInterval(t);
+    }
+    // 窗口获得焦点时，继续时间间隔函数
+    window.focus=function () {
+        t=setInterval(move,2000);
     }
     
     // 自动轮播
@@ -75,9 +82,9 @@ window.onload=function () {
 
 
     // 选项卡
-    let lis=document.querySelectorAll(".banner .fl .list ");
-    let son=document.querySelectorAll(".banner .fl .list .son img");
-    // console.log(lis,son);
+    let lis=document.querySelectorAll(".banner .fl .left .list ");
+    let son=document.querySelectorAll(".banner .fl .right .son");
+    console.log(lis,son);
     for (let i = 0; i < lis.length; i++) {
     	lis[i].onmouseenter=function(){
     		for (let j= 0; j < son.length; j++) {
@@ -135,13 +142,20 @@ window.onload=function () {
     // 选项卡
      let lis1=document.querySelectorAll(".box-pj .top .lis1 a");
     let son1=document.querySelectorAll(".box-pj .list");
-    // console.log(lis1,son1);
+    let hx=document.querySelectorAll(".box-pj .top .lis1 a .hx");
+    console.log(lis1,son1,hx);
+    lis1[3].style.color="#ff6700";
+    hx[3].style.background="#ff6700";
     for (let i = 0; i < lis1.length; i++) {
         lis1[i].onmouseenter=function(){
             for (let j= 0; j < son1.length; j++) {
                 son1[j].style.display="none";
+                lis1[j].style.color="#676769";
+                hx[j].style.background="#F5F5F5";
             }
             son1[i].style.display="block";
+            lis1[i].style.color="#ff6700";
+            hx[i].style.background="#ff6700";
         }
       
     }
