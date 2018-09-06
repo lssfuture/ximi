@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-05 19:10:37
+* @Last Modified time: 2018-09-06 11:09:12
 */
 window.onload=function () {
 
@@ -83,7 +83,7 @@ window.onload=function () {
 
     // 选项卡
     let lis=document.querySelectorAll(".banner .fl .left .list ");
-    let son=document.querySelectorAll(".banner .fl .right .son");
+    let son=document.querySelectorAll(".banner .fl .list .son img");
     console.log(lis,son);
     for (let i = 0; i < lis.length; i++) {
     	lis[i].onmouseenter=function(){
@@ -206,11 +206,33 @@ window.onload=function () {
         milist1.style.transform=`translate(${(-w1*times1)}px)`;
     }
 
+
+
+
+
+
+       // 返回顶部选项卡
+    let lis2=document.querySelectorAll(".sort ul:nth-child(1) li ");
+    let son2=document.querySelectorAll(".sort ul:nth-child(2) li ");
+    console.log(lis2,son2);
+    for (let i = 0; i < lis2.length; i++) {
+        lis2[i].onmouseenter=function(){
+            for (let j= 0; j < son2.length; j++) {
+                son2[j].style.opacity=0;
+            }
+            son2[i].style.opacity=1;
+        }
+        lis2[i].onmouseleave=function(){
+            son2[i].style.opacity=0;
+        }
+    }
+
 }
 
 
 
-   
+
+
 
 	
 	
