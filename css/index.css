@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-07-31 20:56:30
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-06 12:03:51
+* @Last Modified time: 2018-09-15 14:52:53
 */
 *{
 	list-style: none;
@@ -515,6 +515,46 @@ input.text:focus{
 	margin-right: 13px;
 	background: #fafafa;
 	float: left;
+}
+.neirong .daojishi{
+	background-image: url('../img/list1.png');
+	position: relative;
+}
+.neirong .daojishi .h{
+	width: 35px;
+	height: 28px;
+	background: #605751;
+	position: absolute;
+	top: 254px;
+	left: 39px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 26px;
+	color: #fff;
+}
+.neirong .daojishi .f{
+	width: 35px;
+	height: 28px;
+	background: #605751;
+	position: absolute;
+	top: 254px;
+	left: 99px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 26px;
+	color: #fff;
+}
+.neirong .daojishi .s{
+	width: 35px;
+	height: 28px;
+	background: #605751;
+	position: absolute;
+	top: 254px;
+	left: 159px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 26px;
+	color: #fff;
 }
 .neirong .lists{
 	width: 1984px;
