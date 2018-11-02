@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-15 14:56:00
+* @Last Modified time: 2018-11-02 08:57:13
 */
 window.onload=function () {
 
@@ -237,7 +237,7 @@ window.onload=function () {
     setInterval(setDate,1000);
     function setDate() {
         let now=new Date();
-        let future=new Date(2018,9,17,18);
+        let future=new Date(2018,11,12,18);
         let time=Math.floor((future.getTime()-now.getTime())/1000);
         let hour=Math.floor(time%(30*24*60*60)%(24*60*60)/(60*60));
         let fz=Math.floor(time%(30*24*60*60)%(24*60*60)%(60*60)/60);
