@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-11-02 08:57:13
+* @Last Modified time: 2018-11-02 09:19:13
 */
 window.onload=function () {
 
@@ -12,7 +12,7 @@ window.onload=function () {
     let banner=document.querySelectorAll(".banner .lunbotu")[0];
     let leftbtn=document.querySelectorAll(".leftbnt")[0];
     let rightbtn=document.querySelectorAll(".rightbnt")[0];
-    console.log(imgs);
+   console.log(imgs,dots,banner);
     imgs[0].style.opacity=1;
     dots[0].classList.add("active");
     let num=0;
